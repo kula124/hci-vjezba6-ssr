@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Testimonial = ({ caption, imageSrc }) => (
+const Testimonial = ({ caption, imageSrc, linkTo }) => (
     <div className="h-96 sm:border hover:cursor-pointer first:mt-0">
         <div className="h-4/5 bg-gray-100 relative">
             <Image
@@ -28,7 +28,9 @@ const Testimonial = ({ caption, imageSrc }) => (
         </div>
         <div className="h-1/5 bg-gray-300 items-center justify-center relative hidden sm:flex">
             <p className="capitalize font-roboto-condensed text-xl text-hci-lila">
-                <Link href={`/testimonials/${encodeURIComponent(caption)}`}>
+                <Link
+                    href={linkTo || `/testimonials/${encodeURIComponent(caption)}`}
+                >
                     {caption}
                 </Link>
             </p>
