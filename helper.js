@@ -2,7 +2,7 @@ import axios from 'axios';
 // https://my-json-server.typicode.com/kula124/json-placeholder
 
 const instance = axios.create({
-    baseURL: 'https://my-json-server.typicode.com/kula124/json-placeholder',
+    baseURL: process.env.API_URL,
 });
 
 export const getPosts = () =>
